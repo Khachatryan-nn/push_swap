@@ -33,6 +33,7 @@ $(GET_NEXT_LINE):
 					make -C $(GET_NEXT_LINE_P) $?
 $(FT_PRINTF):
 					make -C $(FT_PRINTF_P) $?
+					ar -dv $(FT_PRINTF) $(LIBFT)
 
 clean:
 					make -C $(LIBFT_P) clean

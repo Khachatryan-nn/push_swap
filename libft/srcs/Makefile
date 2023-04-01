@@ -22,7 +22,6 @@ all:			$(NAME)
 %.o:			%.c $(HEADER)
 					$(CC) $(CFLAGS) -c $< -o $@
 
-
 $(NAME):		$(OBJS)
 					$(AR) $(NAME) $?
 
