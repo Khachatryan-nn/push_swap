@@ -5,6 +5,7 @@
 		"get_next_line_bonus.h": "c",
 		"ft_printf.h": "c",
 		"compare": "cpp",
-		"type_traits": "cpp"
+		"type_traits": "cpp",
+		"push_swap.h": "c"
 	}
 }
