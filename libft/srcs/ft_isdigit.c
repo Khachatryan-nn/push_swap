@@ -6,11 +6,11 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:18:22 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/01/27 20:24:08 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:17:16 by yourLogin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isdigit(int c)
 {

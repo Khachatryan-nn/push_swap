@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "libft/libft.h"
+#include "libft/includes/libft.h"
+#include "libft/includes/ft_printf.h"
+#include "libft/includes/get_next_line_bonus.h"
 
 int	check_err(int, char **);
 

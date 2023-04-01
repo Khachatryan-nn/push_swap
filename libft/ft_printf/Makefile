@@ -1,16 +1,16 @@
 NAME			=	libftprintf.a
-CC				=	cc
+CC			=	cc
 CFLAGS			=	-Wall -Wextra -Werror
-RM				=	rm -rf
-AR				=	ar rcs
+RM			=	rm -rf
+AR			=	ar rcs
 
-LIBFT_P			=	libft
+LIBFT_P			=	../srcs/
 LIBFT			=	$(LIBFT_P)/libft.a
 SRCS			=	ft_printf_nmbs.c ft_printf_strs.c ft_printf.c
 OBJS			=	$(SRCS:.c=.o)
 
-.DEFAULT_GOAL	=	all
-HEADER			= 	ft_printf.h
+.DEFAULT_GOAL		=	all
+HEADER			= 	../includes/ft_printf.h
 
 all:			$(NAME)
 

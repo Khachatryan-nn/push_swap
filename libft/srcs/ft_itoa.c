@@ -6,11 +6,11 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:34:22 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/16 19:03:19 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:17:39 by yourLogin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 #include <stdlib.h>
 
 static int	ft_lenght(int n)

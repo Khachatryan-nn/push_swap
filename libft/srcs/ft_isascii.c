@@ -6,11 +6,11 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:39:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/01/27 19:41:27 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:17:07 by yourLogin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isascii(int c)
 {

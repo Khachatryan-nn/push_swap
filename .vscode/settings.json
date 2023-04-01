@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"libft.h": "c",
+		"stdlib.h": "c",
+		"get_next_line_bonus.h": "c",
+		"ft_printf.h": "c",
+		"compare": "cpp",
+		"type_traits": "cpp"
+	}
+}

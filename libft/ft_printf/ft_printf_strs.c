@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <unistd.h>
-#include <stdlib.h>
+#include "../includes/ft_printf.h"
 
 int	ft_putchr(char c)
 {

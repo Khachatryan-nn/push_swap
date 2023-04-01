@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 18:19:18 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/15 21:19:19 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:01:18 by yourLogin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdlib.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

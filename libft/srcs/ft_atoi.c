@@ -6,11 +6,11 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:14:16 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/01/27 14:52:58 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:14:59 by yourLogin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_atoi(const char *str)
 {

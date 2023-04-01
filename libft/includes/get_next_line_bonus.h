@@ -17,6 +17,10 @@
 #  define BUFFER_SIZE 100
 # endif
 
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
+# endif
+
 # include <stdlib.h>
 # include <stdarg.h>
 # include <fcntl.h>

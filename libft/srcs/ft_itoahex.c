@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../includes/libft.h"
 
 static int	ft_lenght(unsigned int n)
 {
@@ -31,8 +30,6 @@ static char	ft_chr(unsigned int n, int lenght, char c)
 	while (--lenght)
 		n /= 16;
 	n %= 16;
-	if (n < 0)
-		n *= -1;
 	if (n > 9 && c == 'x')
 		return (97 + n % 10);
 	else if (n > 9 && c == 'X')

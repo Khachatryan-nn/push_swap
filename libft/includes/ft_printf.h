@@ -14,8 +14,9 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
+# include <stdlib.h>
 # include <stdarg.h>
-# include "libft/libft.h"
+# include "../includes/libft.h"
 
 int	ft_printf(const char *arg, ...);
 int	ft_percentage(char type, va_list arg);
