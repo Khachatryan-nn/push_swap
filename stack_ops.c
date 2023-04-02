@@ -6,14 +6,17 @@ t_list	*fill_a(char **args, int len)
 	int		i;
 	int		*content;
 
-	i = 1;
-	content = (int *)malloc(sizeof(int));
-	start = (t_list *)malloc(sizeof(t_list));
-	if (!start)
-		return (NULL);
-	while (i <= len)
+	i = 0;
+	start = NULL;
+	while (i < len)
 	{
-		*content = ft_atoi(args[i]);
+		content = (int *)malloc(sizeof(int));
+		if (!content)
+		{
+			ft_lstclear(&start, free);
+			return (NULL);
+		}
+		*content = ft_atoi(args[i + 1]);
 		ft_lstadd_back(&start, ft_lstnew(content));
 		i++;
 	}
