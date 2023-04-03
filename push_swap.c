@@ -34,17 +34,26 @@ void print_list(t_list *start)
 int	main(int argv, char **argc)
 {
 	t_list	*a;
-	//t_list	*b;
+	t_list	*b;
 	int		len;
 
 
 	len = check_err(argv, argc);
 	if (!len)
 		return (0);
-	a = (t_list *)malloc(sizeof(t_list) * len);
-	//b = (arg_list *)malloc(sizeof(arg_list) * len);
+	a = (t_list *)malloc(sizeof(t_list));
+	b = (t_list *)malloc(sizeof(t_list));
 	a = fill_a(argc, len);
+	ft_printf("Now we are printing our stack a after filling him:\n");
 	print_list(a);
-
-    ft_lstclear(&a, free);
+	swap(&a);
+	ft_printf("There are stack a after swaping first 2 elements\n");
+	print_list(a);
+	pushb(&a, &b);
+	pushb(&a, &b);
+	ft_printf("And there are stack a, after push b 2x\n");
+	print_list(a);
+	ft_printf("There are stack b, after push b 2x\n");
+	print_list(b);
+	ft_lstclear(&a, free);
 }
