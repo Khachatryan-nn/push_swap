@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   int_arr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tikhacha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 10:56:45 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/03 17:06:54 by tikhacha         ###   ########.fr       */
+/*   Created: 2023/04/03 16:52:02 by tikhacha          #+#    #+#             */
+/*   Updated: 2023/04/03 16:58:40 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstnew(int data)
+int	*fill_int_arr(t_list	*a, int len)
 {
-	t_list	*new;
+	int	*x;
+	int	i;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (0);
-	new->next = 0;
-	new->prev = 0;
-	new->index = 0;
-	new->data = data;
-	return (new);
+	x = (int *)malloc(sizeof(int) * len);
+	i = 0;
+	while (i < len && !a)
+	{
+		x[i] = (int) a->content;
+		i++;
+		a = a->next;
+	}
+	return (x);
 }

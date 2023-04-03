@@ -13,5 +13,6 @@ t_list	*fill_a(char **args, int len);
 void	swap(t_list **start);
 void	pushb(t_list **a, t_list **b);
 void	print_list(t_list *start);
+int		*fill_int_arr(t_list *start, int len);
 
 #endif

@@ -11,7 +11,7 @@ FT_PRINTF		=	$(FT_PRINTF_P)/libftprintf.a
 GET_NEXT_LINE_P	=	./libft/get_next_line
 GET_NEXT_LINE	=	$(GET_NEXT_LINE_P)/get_next_line.a
 
-SRCS			=	push_swap.c checker.c stack_ops.c
+SRCS			=	push_swap.c checker.c stack_ops.c int_arr.c
 OBJS			=	$(SRCS:.c=.o)
 
 .DEFAULT_GOAL		=	all
