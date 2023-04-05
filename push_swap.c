@@ -31,7 +31,7 @@ int	main(int argv, char **argc)
 	int		len;
 
 	len = 0;
-	arr = spliter(argv, argc, &len);
+	arr = spliter(argv, argc);
 	if (!arr)
 		return (0);
 	int_arr = (int *)malloc(sizeof(len));

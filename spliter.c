@@ -13,8 +13,9 @@ static int	count_len(int rows, char **strs)
 		j = 0;
 		while ((strs[i][j] >= '0' && strs[i][j] <= '9') || strs[i][j] == ' ')
 		{
+			if (strs[i][j] >= '0' && strs[i][j] <= '9')
+				counter++;
 			j++;
-			counter++;
 		}
 		if (strs[i][j] != '\0')
 		{
@@ -23,20 +24,20 @@ static int	count_len(int rows, char **strs)
 		}
 		i++;
 	}
+	if (counter == 0 && i > 1)
+		printf("Error\n");
 	return (counter);
 }
 
-char	**spliter(int argv, char **argc, int *lenght)
+char	**spliter(int argv, char **argc)
 {
 	int		i;
-	int		len;
 	char	*all_there;
 	char	**arr;
 	char 	*temp;
 
 	i = 1;
-	len = count_len(argv, argc);
-	if (!len)
+	if (count_len(argv, argc) == 0)
 		return (NULL);
 	all_there = ft_strdup("");
 	while (i < argv)
@@ -48,8 +49,5 @@ char	**spliter(int argv, char **argc, int *lenght)
 		i++;
 	}
 	arr = ft_split(all_there, ' ');
-	*lenght = 0;
-	while (arr[*lenght] != NULL)
-		(*lenght)++;
 	return (arr);
 }
