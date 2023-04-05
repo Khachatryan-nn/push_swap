@@ -1,57 +1,70 @@
 #include "push_swap.h"
 
-t_list	*fill_a(char **args, int len)
+/*
+ * Fills A with string matrix, gived as arg
+ * then returns address of first node
+ * created by those arguments*/
+t_list	*fill_a(char **args)
 {
 	t_list	*start;
-	int		i;
-	int		*content;
+	int	i;
 
 	i = 0;
 	start = NULL;
-	while (i < len)
+	while (args[i] != NULL)
 	{
-		content = (int *)malloc(sizeof(int));
-		if (!content)
-		{
-			ft_lstclear(&start, free);
-			return (NULL);
-		}
-		*content = ft_atoi(args[i + 1]);
-		ft_lstadd_back(&start, ft_lstnew(content));
+		ft_lstadd_back(&start, ft_lstnew(ft_atoi(args[i])));
 		i++;
 	}
 	return (start);
 }
 
+/*
+ * Swapping first two elements of gived list*/
 void	swap(t_list **start)
 {
-	void	*temp;
+	int	temp_data;
+	int temp_index;
 
-	temp = (void *)malloc(sizeof(int));
-	if (!temp)
-		return ;
 	if (ft_lstsize(*start) > 1)
 	{
-		temp = (*start)->content;
-		(*start)->content = (*start)->next->content;
-		(*start)->next->content = temp;
+		temp_data = (*start)->data;
+		temp_index = (*start)->index;
+		(*start)->data = (*start)->next->data;
+		(*start)->index = (*start)->next->index;
+		(*start)->next->data = temp_data;
+		(*start)->next->index = temp_index;
 	}
 	return ;
 }
 
+/*
+ * Pushing first element
+ * of list a to list b*/
 void	pushb(t_list **a, t_list **b)
 {
 	t_list	*temp;
 
-	if (!a || !*a)
+	if (!a || !*a || !b)
 		return ;
-	temp = (t_list *)malloc(sizeof(t_list));
-	if (!temp)
-		return ;
-	ft_lstadd_front(b, ft_lstnew((*a)->content));
-	temp = (*a);
-	*a = (*a)->next;
-	ft_lstdelone(temp, free);
+	temp = (*a)->next;
+	if (!(*b)->data)
+	{
+		*b = (t_list *)malloc(sizeof(t_list));
+		if (!*b)
+			return ;
+		*b = *a;
+		(*b)->next = NULL;
+		printf("B was NULL\n");
+	}
+	else
+	{
+		(*a)->next = *b;
+		(*b)->prev = *a;
+		*b = *a;
+		printf("B wasn't NULL\n");
+	}
+	*a = temp;
 	(*a)->prev = 0;
 	return ;
 }

@@ -3,8 +3,6 @@
 void print_list(t_list *start)
 {
     t_list *ptr;
-    int *iptr;
-
     if (start == NULL)
     {
         ft_printf("Error: linked list is empty.\n");
@@ -13,20 +11,13 @@ void print_list(t_list *start)
     ptr = start;
     while (ptr != NULL)
     {
-        if (ptr->content == NULL)
+        if (!(ptr->data))
         {
-            ft_printf("Error: content pointer is NULL.\n");
+            ft_printf("Error: data is NULL.\n");
             ptr = ptr->next;
             continue;
         }
-        iptr = (int *)ptr->content;
-        if ((uintptr_t)iptr % sizeof(int) != 0)
-        {
-            ft_printf("Error: content pointer is not aligned for int.\n");
-            ptr = ptr->next;
-            continue;
-        }
-        ft_printf("%d\n", *iptr);
+        ft_printf("%d\n", (ptr->data));
         ptr = ptr->next;
     }
 }
@@ -35,11 +26,13 @@ int	main(int argv, char **argc)
 {
 	t_list	*a;
 	t_list	*b;
-	int		len;
+	char	**arr;
 	int		*int_arr;
+	int		len;
 
-	len = check_err(argv, argc);
-	if (!len)
+	len = 0;
+	arr = spliter(argv, argc, &len);
+	if (!arr)
 		return (0);
 	int_arr = (int *)malloc(sizeof(len));
 	if (!int_arr)
@@ -57,7 +50,7 @@ int	main(int argv, char **argc)
 		free(int_arr);
 		return (0);
 	}
-	a = fill_a(argc, len);
+	a = fill_a(arr);
 	ft_printf("Now we are printing our stack a after filling him:\n");
 	print_list(a);
 	int_arr = fill_int_arr(a, len);
@@ -69,9 +62,10 @@ int	main(int argv, char **argc)
 	print_list(a);
 	pushb(&a, &b);
 	pushb(&a, &b);
-	ft_printf("And there are stack a, after push b 2x\n");
+	pushb(&a, &b);
+	ft_printf("And there are stack a, after push b 3x\n");
 	print_list(a);
-	ft_printf("There are stack b, after push b 2x\n");
+	ft_printf("There are stack b, after push b 3x\n");
 	print_list(b);
-	ft_lstclear(&a, free);
+	ft_lstclear(&a);
 }
