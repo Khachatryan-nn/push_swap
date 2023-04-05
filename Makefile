@@ -20,32 +20,30 @@ HEADER			= 	push_swap.h
 all:			$(NAME)
 
 %.o:			%.c $(HEADER)
-					$(CC) $(CFLAGS) -c $< -o $@
+					-@ $(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(LIBFT) $(GET_NEXT_LINE) $(FT_PRINTF) $(OBJS)
-					$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GET_NEXT_LINE) $(FT_PRINTF) -o $(NAME)
-#					$(AR) $(NAME) $(OBJS)
-#					cat $(LIBFT) $(GET_NEXT_LINE) $(FT_PRINTF) > $(NAME)
+					-@ $(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GET_NEXT_LINE) $(FT_PRINTF) -o $(NAME)
 
 $(LIBFT):
-					make -C $(LIBFT_P) $?
+					-@ make -C $(LIBFT_P) $?
 $(GET_NEXT_LINE):
-					make -C $(GET_NEXT_LINE_P) $?
+					-@ make -C $(GET_NEXT_LINE_P) $?
 $(FT_PRINTF):
-					make -C $(FT_PRINTF_P) $?
-					ar -dv $(FT_PRINTF) $(LIBFT)
+					-@ make -C $(FT_PRINTF_P) $?
+					-@ ar -dv $(FT_PRINTF) $(LIBFT)
 
 clean:
-					make -C $(LIBFT_P) clean
-					make -C $(FT_PRINTF_P) clean
-					make -C $(GET_NEXT_LINE_P) clean
-					$(RM) $(OBJS)
+					-@ make -C $(LIBFT_P) clean
+					-@ make -C $(FT_PRINTF_P) clean
+					-@ make -C $(GET_NEXT_LINE_P) clean
+					-@ $(RM) $(OBJS)
 
 fclean:			clean
-					make -C $(LIBFT_P) fclean
-					make -C $(FT_PRINTF_P) fclean
-					make -C $(GET_NEXT_LINE_P) fclean
-					$(RM) $(NAME)
+					-@ make -C $(LIBFT_P) fclean
+					-@ make -C $(FT_PRINTF_P) fclean
+					-@ make -C $(GET_NEXT_LINE_P) fclean
+					-@ $(RM) $(NAME)
 
 re:				fclean all
 
