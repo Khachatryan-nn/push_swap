@@ -1,16 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/06 18:50:54 by tikhacha          #+#    #+#             */
+/*   Updated: 2023/04/06 18:51:18 by tikhacha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 /*
  * Fills A with string matrix, gived as arg
  * then returns address of first node
  * created by those arguments*/
-t_list	*fill_a(char **args)
+t_list	*fill_a(int argv, char **argc)
 {
 	t_list	*start;
-	int	i;
+	char	**args;
+	int		i;
 
 	i = 0;
 	start = NULL;
+	args = spliter(argv, argc);
+	if (args == NULL)
+		return (NULL);
 	while (args[i] != NULL)
 	{
 		ft_lstadd_back(&start, ft_lstnew(ft_atoi(args[i])));
@@ -24,7 +40,7 @@ t_list	*fill_a(char **args)
 void	swap(t_list **start)
 {
 	int	temp_data;
-	int temp_index;
+	int	temp_index;
 
 	if (ft_lstsize(*start) > 1)
 	{

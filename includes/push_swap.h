@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
+/*   Updated: 2023/04/06 19:08:53 by tikhacha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -17,7 +29,11 @@
 # include <fcntl.h>
 # include <limits.h>
 
-
+/*
+*	int				data;
+*	unsigned int	index;
+*	struct s_list	*prev;
+*	struct s_list	*next;*/
 typedef struct s_list
 {
 	int				data;
@@ -26,11 +42,14 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int		free_all(t_list *a, t_list *b, int	*int_arr);
 int		*fill_int_arr(t_list *start, int len);
 char	**spliter(int argN, char **args);
+t_list	*fill_a(int argv, char **argc);
 void	pushb(t_list **a, t_list **b);
 void	print_list(t_list *start);
-t_list	*fill_a(char **args);
+char	**free_str(char	*str);
+char	**free_str(char	*str);
 void	swap(t_list **start);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

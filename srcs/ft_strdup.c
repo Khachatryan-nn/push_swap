@@ -6,12 +6,17 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:47:31 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 16:58:56 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:58:41 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*
+*This is a function that takes a string as input, allocates memory
+*for a new string of the same size, copies the original string to
+*the new memory location, and returns a pointer to the new string.
+*If the allocation fails, it returns NULL.*/
 char	*ft_strdup(const char *s1)
 {
 	char		*p;
