@@ -4,27 +4,30 @@ CFLAGS			=	-Wall -Wextra -Werror
 RM				=	rm -rf
 AR				=	ar rcs
 
-SRCSDIR			=	srcs
-OBJSDIR			=	objs
-SRCS			=	$(wildcard $(SRCSDIR)/*.c)
-OBJS			=	$(SRCS:.c=.o)
+SRCD			=	srcs
+OBJD			=	objs
+SRCS			=	$(wildcard $(SRCD)/*.c)
+OBJS			=	$(patsubst $(SRCD)/%.c,$(OBJD)/%.o,$(SRCS))
 
 .DEFAULT_GOAL	=	all
 HEADER			= 	./includes/push_swap.h
 
 all:			$(NAME)
 
-%.o:			%.c $(HEADER)
-					$(CC) $(CFLAGS) -c $< -o $@
+$(OBJD)/%.o:	$(SRCD)/%.c $(HEADER)
+					-@mkdir -p $(OBJD)
+					-@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(OBJS)
-					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+					-@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+					@echo "Build complete!"
 
 clean:
-					$(RM) $(OBJS)
+					-@$(RM) $(OBJD)
+					@echo "Cleaned!"
 
 fclean:			clean
-					$(RM) $(NAME)
+					-@$(RM) $(NAME)
 
 re:				fclean all
 
