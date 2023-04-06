@@ -6,17 +6,16 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:54 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 18:51:18 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:28:50 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /*
- * Fills A with string matrix, gived as arg
- * then returns address of first node
- * created by those arguments*/
-t_list	*fill_a(int argv, char **argc)
+ * Fills A with string matrix, gived as arg then returns address of first node
+ * created by those arguments and lenght of list also*/
+t_list	*fill_a(int argv, char **argc, int *len)
 {
 	t_list	*start;
 	char	**args;
@@ -32,11 +31,14 @@ t_list	*fill_a(int argv, char **argc)
 		ft_lstadd_back(&start, ft_lstnew(ft_atoi(args[i])));
 		i++;
 	}
+	*len = i;
 	return (start);
 }
 
 /*
- * Swapping first two elements of gived list*/
+* Function swaps the data and index of the first two elements
+*of a linked list pointed to by start. If the size of the
+*linked list is less than or equal to 1, no action is taken.*/
 void	swap(t_list **start)
 {
 	int	temp_data;

@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:22:21 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 19:16:50 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:24:37 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	free_all(t_list *a, t_list *b, int	*int_arr)
 	free (b);
 	b = 0;
 	free(int_arr);
+	ft_printf("Error\n");
 	return (0);
 }
 

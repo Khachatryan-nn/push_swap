@@ -24,7 +24,7 @@ $(NAME):		$(OBJS)
 
 clean:
 					-@$(RM) $(OBJD)
-					@echo "Cleaned!"
+					@echo "Cleaned."
 
 fclean:			clean
 					-@$(RM) $(NAME)
