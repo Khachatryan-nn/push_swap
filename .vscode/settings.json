@@ -7,5 +7,12 @@
 		"compare": "cpp",
 		"type_traits": "cpp",
 		"push_swap.h": "c"
-	}
+	},
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/Users/tigrankhachatryan/Desktop/all/42/push_swap",
+			"binaryPath": "/Users/tigrankhachatryan/Desktop/all/42/push_swap/push_swap",
+			"binaryArgs": []
+		}
+	]
 }
