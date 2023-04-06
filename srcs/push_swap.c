@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 18:57:11 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:13:04 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int argv, char **argc)
 	if (!a || !int_arr || !b)
 		return (free_all(a, b, int_arr));
 	a = fill_a(argv, argc);
-	print_list(a);
 	if (!a)
 		return (free_all(a, b, int_arr));
+	print_list(a);
 }
