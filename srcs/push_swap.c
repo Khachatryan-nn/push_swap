@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 21:23:15 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:30:58 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ void	print_list(t_list *start)
 	ptr = start;
 	while (ptr != NULL)
 	{
-		if (!(ptr->data))
-		{
-			ft_printf("Error: data is NULL.\n");
-			ptr = ptr->next;
-			continue ;
-		}
 		ft_printf("%d\n", (ptr->data));
 		ptr = ptr->next;
 	}
@@ -48,18 +42,21 @@ int	main(int argv, char **argc)
 	int		len;
 
 	len = 0;
-	int_arr = (int *)malloc(sizeof(len));
-	a = (t_list *)malloc(sizeof(t_list));
+	a = NULL;
+	b = NULL;
 	b = (t_list *)malloc(sizeof(t_list));
-	if (!a || !int_arr || !b)
-		return (free_all(a, b, int_arr));
+	if (!b)
+		return (free_stacks(a, b));
 	a = fill_a(argv, argc, &len);
 	if (!a)
-		return (free_all(a, b, int_arr));
-	ft_printf("%d\n", len);
+		return (free_stacks(a, b));
 	int_arr = fill_int_arr(a, len);
-	if (!int_arr)
-		return (free_all(a, b, int_arr));
+	if (int_arr == NULL)
+		return (free_stacks(a, b));
+	//rotate(&a);
+	//free_all(a, b, int_arr);
+//	start_sorting(a, b, int_arr, len);
 //	sort_array_buttefly(int_arr, len);
 //	print_int_array(int_arr, len);
+	return(free_a(a));
 }

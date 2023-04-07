@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 20:30:48 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:28:45 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,20 @@ typedef struct s_list
 }					t_list;
 
 int		free_all(t_list *a, t_list *b, int	*int_arr);
+void	sorting(t_list *a, t_list *b, int n, int *x);
 t_list	*fill_a(int argv, char **argc, int *len);
 int		*fill_int_arr(t_list *start, int len);
 void	sort_array_buttefly(int	*x, int	len);
+int		free_stacks(t_list *a, t_list *b);
 char	**spliter(int argN, char **args);
 void	print_int_array(int *x, int n);
-void	pushb(t_list **a, t_list **b);
+void	pb(t_list **a, t_list **b);
 void	print_list(t_list *start);
+void	rotate(t_list **nodes);
 char	**free_str(char	*str);
 char	**free_str(char	*str);
 void	swap(t_list **start);
+int		free_a(t_list *a);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);

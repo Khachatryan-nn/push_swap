@@ -6,11 +6,25 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:22:21 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 21:24:37 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:30:50 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+*Does free for a stack only, but in first uses lstclear
+*Then does free, and after all, makes a = 0*/
+int	free_a(t_list *a)
+{
+	if (a)
+	{
+		ft_lstclear(&a);
+		free(a);
+		a = 0;
+	}
+	return (0);
+}
 
 /*
 *Frees 2 lists and integer array, given as arguments,
@@ -19,14 +33,39 @@
 int	free_all(t_list *a, t_list *b, int	*int_arr)
 {
 	if (a)
+	{
 		ft_lstclear(&a);
+		free(a);
+		a = 0;
+	}
 	if (b)
+	{
 		ft_lstclear(&b);
-	free(a);
-	a = 0;
-	free (b);
-	b = 0;
-	free(int_arr);
+		free (b);
+		b = 0;
+	}
+	if (int_arr != NULL)
+	{
+		free(int_arr);
+		int_arr = NULL;
+	}
+	return (0);
+}
+
+/*
+*Does just free for two stacks*/
+int	free_stacks(t_list *a, t_list *b)
+{
+	if (a)
+	{
+		free(a);
+		a = 0;
+	}
+	if (b)
+	{
+		free (b);
+		b = 0;
+	}
 	ft_printf("Error\n");
 	return (0);
 }

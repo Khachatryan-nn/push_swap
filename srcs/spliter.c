@@ -6,12 +6,16 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:47:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 18:48:04 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:53:54 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*
+*Counts number of numbers in our strings, but if there any other character
+*beside numbers and spaces, it return's 0 and outputs Error message
+*/
 static int	count_len(int rows, char **strs)
 {
 	int	i;
@@ -41,6 +45,9 @@ static int	count_len(int rows, char **strs)
 	return (counter);
 }
 
+/*
+*Checks if string contains numerous characters,
+*and if so returns 1, otherway returns 0*/
 static int	is_there_num(char *str)
 {
 	int	i;

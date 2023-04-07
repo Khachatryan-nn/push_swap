@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:54 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 19:28:50 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:18:22 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*fill_a(int argv, char **argc, int *len)
 	start = NULL;
 	args = spliter(argv, argc);
 	if (args == NULL)
-		return (NULL);
+		return (start);
 	while (args[i] != NULL)
 	{
 		ft_lstadd_back(&start, ft_lstnew(ft_atoi(args[i])));
@@ -59,7 +59,7 @@ void	swap(t_list **start)
 /*
  * Pushing first element
  * of list a to list b*/
-void	pushb(t_list **a, t_list **b)
+void	pb(t_list **a, t_list **b)
 {
 	t_list	*temp;
 
@@ -73,16 +73,28 @@ void	pushb(t_list **a, t_list **b)
 			return ;
 		*b = *a;
 		(*b)->next = NULL;
-		printf("B was NULL\n");
 	}
 	else
 	{
 		(*a)->next = *b;
 		(*b)->prev = *a;
 		*b = *a;
-		printf("B wasn't NULL\n");
 	}
 	*a = temp;
 	(*a)->prev = 0;
 	return ;
+}
+
+void	rotate(t_list **nodes)
+{
+	t_list	*temp;
+
+	temp = *nodes;
+	while (temp != NULL)
+		temp = temp->next;
+	temp->next = (*nodes)->next;
+	(*nodes)->prev = temp->prev;
+	(*nodes)->next = NULL;
+	temp->prev = NULL;
+	*nodes = temp;
 }

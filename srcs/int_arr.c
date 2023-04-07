@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:52:02 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 22:45:45 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:06:14 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	check_for_reccurence_and_being_sorted(int *x, int n)
 		if (i < n && x[i - 1] > x[i])
 			check = 1;
 	}
-	if (!check)
+	if (check == 0)
 		return (0);
 	return (1);
 }
