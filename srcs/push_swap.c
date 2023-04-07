@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/07 15:30:58 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:03:37 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,9 @@ int	main(int argv, char **argc)
 	int_arr = fill_int_arr(a, len);
 	if (int_arr == NULL)
 		return (free_stacks(a, b));
-	//rotate(&a);
-	//free_all(a, b, int_arr);
-//	start_sorting(a, b, int_arr, len);
+	sorting(&a, &b, len, int_arr);
 //	sort_array_buttefly(int_arr, len);
 //	print_int_array(int_arr, len);
+	print_list(a);
 	return(free_a(a));
 }
