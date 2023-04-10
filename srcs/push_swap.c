@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/07 18:03:37 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/09 00:57:15 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ int	main(int argv, char **argc)
 	len = 0;
 	a = NULL;
 	b = NULL;
-	b = (t_list *)malloc(sizeof(t_list));
-	if (!b)
-		return (free_stacks(a, b));
 	a = fill_a(argv, argc, &len);
 	if (!a)
 		return (free_stacks(a, b));
@@ -56,6 +53,9 @@ int	main(int argv, char **argc)
 	sorting(&a, &b, len, int_arr);
 //	sort_array_buttefly(int_arr, len);
 //	print_int_array(int_arr, len);
+	ft_printf("list a:\n");
 	print_list(a);
+	ft_printf("list b:\n");
+	print_list(b);
 	return(free_a(a));
 }

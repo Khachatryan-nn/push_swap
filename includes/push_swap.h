@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/07 18:05:45 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/08 23:10:31 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ void	sort_3plus(t_list **a, t_list **b);
 int		free_stacks(t_list *a, t_list *b);
 char	**spliter(int argN, char **args);
 void	print_int_array(int *x, int n);
-void	push_b(t_list **a, t_list **b);
-void	push_a(t_list **a, t_list **b);
+void	push(t_list **a, t_list **b);
 void	print_list(t_list *start);
-void	rrotate_a(t_list **nodes);
-void	rotate_a(t_list **nodes);
-void	swap_a(t_list **start);
+void	rrotate(t_list **nodes);
+void	rotate(t_list **nodes);
+void	swap(t_list **start);
 char	**free_str(char	*str);
 char	**free_str(char	*str);
-void	sort_3(t_list **a);
+void	sort_3a(t_list **a);
+void	sort_3b(t_list **b);
 int		free_a(t_list *a);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

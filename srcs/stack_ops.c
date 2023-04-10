@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:54 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/07 18:03:53 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/09 00:53:18 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_list	*fill_a(int argv, char **argc, int *len)
 * Function swaps the data and index of the first two elements
 *of a linked list pointed to by start. If the size of the
 *linked list is less than or equal to 1, no action is taken.*/
-void	swap_a(t_list **start)
+void	swap(t_list **start)
 {
 	int	temp_data;
 	int	temp_index;
@@ -53,68 +53,43 @@ void	swap_a(t_list **start)
 		(*start)->next->data = temp_data;
 		(*start)->next->index = temp_index;
 	}
-	ft_printf("sa\n");
 	return ;
 }
 
 /*
  * Pushing first element
  * of list a to list b*/
-void	push_b(t_list **a, t_list **b)
+void	push(t_list **a, t_list **b)
 {
 	t_list	*temp;
 
 	if (!a || !*a || !b)
 		return ;
-	temp = (*a)->next;
-	if (!(*b)->data)
+	if (ft_lstsize(*a) > 0)
 	{
-		*b = (t_list *)malloc(sizeof(t_list));
-		if (!*b)
-			return ;
-		*b = *a;
-		(*b)->next = NULL;
+		temp = (*a)->next;
+		if (ft_lstsize(*b) >= 1)
+		{
+			(*b)->prev = *a;
+			(*a)->next = *b;
+			*b = *a;
+		}
+		else
+		{
+			(*b) = (t_list *)malloc(sizeof(t_list));
+			if (!*b)
+				return ;
+			*b = *a;
+			(*b)->next = NULL;
+		}
+		(*a) = temp;
+		if (*a)
+			(*a)->prev = NULL;
 	}
-	else
-	{
-		(*a)->next = *b;
-		(*b)->prev = *a;
-		*b = *a;
-	}
-	*a = temp;
-	(*a)->prev = 0;
-	ft_printf ("pb\n");
 	return ;
 }
 
-void	push_a(t_list **a, t_list **b)
-{
-	t_list	*temp;
-
-	if (!a || !b || !*b)
-		return ;
-	temp = (*a)->next;
-	if (!(*a)->data)
-	{
-		*a = (t_list *)malloc(sizeof(t_list));
-		if (!*a)
-			return ;
-		*a = *b;
-		(*a)->next = NULL;
-	}
-	else
-	{
-		(*b)->next = *a;
-		(*a)->prev = *b;
-		*a = *b;
-	}
-	*b = temp;
-	(*b)->prev = 0;
-	printf("pa\n");
-	return ;
-}
-
-void	rotate_a(t_list **nodes)
+void	rotate(t_list **nodes)
 {
 	t_list	*temp;
 
@@ -131,7 +106,7 @@ void	rotate_a(t_list **nodes)
 	ft_printf("ra\n");
 }
 
-void	rrotate_a(t_list **nodes)
+void	rrotate(t_list **nodes)
 {
 	t_list	*temp;
 
