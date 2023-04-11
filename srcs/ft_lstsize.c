@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:01:58 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 16:58:56 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:31:50 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_lstsize(t_list *lst)
 	pointer = lst;
 	while (pointer != NULL)
 	{
-		pointer = pointer->next;
+		pointer = pointer->n;
 		i++;
 	}
 	return (i);

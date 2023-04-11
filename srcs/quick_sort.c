@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 22:15:49 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/11 17:31:50 by tikhacha         ###   ########.fr       */
+/*   Created: 2023/04/11 19:06:14 by tikhacha          #+#    #+#             */
+/*   Updated: 2023/04/11 19:25:28 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	midpoint(int len)
 {
-	t_list	*pointer;
-
-	if (!new)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	pointer = *lst;
-	while (pointer->n != NULL)
-		pointer = pointer->n;
-	pointer->n = new;
-	new->p = pointer;
+	return (len / 2 + len % 2);
 }

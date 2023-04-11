@@ -6,17 +6,17 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/09 00:57:15 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/11 19:22:01 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /*
-*This function prints the integer data stored in each node of a linked list.
+*This function prints the integer d stored in each node of a linked list.
 *If the linked list is empty, it prints an error message saying so.
-*If the data in a node is NULL, it skips that node and prints
-*an error message indicating the data is NULL.*/
+*If the d in a node is NULL, it skips that node and prints
+*an error message indicating the d is NULL.*/
 void	print_list(t_list *start)
 {
 	t_list	*ptr;
@@ -29,8 +29,8 @@ void	print_list(t_list *start)
 	ptr = start;
 	while (ptr != NULL)
 	{
-		ft_printf("%d\n", (ptr->data));
-		ptr = ptr->next;
+		ft_printf("%d\n", (ptr->d));
+		ptr = ptr->n;
 	}
 }
 
@@ -50,12 +50,12 @@ int	main(int argv, char **argc)
 	int_arr = fill_int_arr(a, len);
 	if (int_arr == NULL)
 		return (free_stacks(a, b));
+	int_arr = fill_int_arr(a, len);
+	indexing(a, int_arr, len);
 	sorting(&a, &b, len, int_arr);
-//	sort_array_buttefly(int_arr, len);
-//	print_int_array(int_arr, len);
-	ft_printf("list a:\n");
+	ft_printf("!!!=== LIST A ===!!!\n");
 	print_list(a);
-	ft_printf("list b:\n");
+	ft_printf("!!!=== LIST B ===!!!\n");
 	print_list(b);
-	return(free_a(a));
+	return(free_all(a, b, int_arr));
 }

@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:19:30 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 16:59:22 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:31:50 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (NULL);
 	pointer = lst;
-	while (pointer->next != NULL)
-		pointer = pointer->next;
+	while (pointer->n != NULL)
+		pointer = pointer->n;
 	return (pointer);
 }

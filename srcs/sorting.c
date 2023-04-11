@@ -6,80 +6,132 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 10:44:36 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/09 01:01:12 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/11 19:26:54 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_3a(t_list **a)
+void	sort_3(t_list **a, int n)
 {
-	if ((*a)->data > (*a)->next->data && (*a)->next->data > (*a)->next->next->data)
+	t_list	*t;
+
+	t = (*a)->n;
+	if (t->p->d > t->d && t->d > t->n->d)
 	{
-		swap(a);
-		rrotate(a);
-		printf("sa\nrra\n");
+		swap(a, n);
+		rrotate(a, n);
 	}
-	else if ((*a)->data > (*a)->next->next->data && (*a)->next->data < (*a)->next->next->data)
+	else if (t->p->d > t->n->d && t->d < t->n->d)
+		rotate(a, n);
+	else if (t->p->d > t->d && t->p->d < t->n->d)
+		swap(a, n);
+	else if (t->p->d < t->d && t->p->d > t->n->d)
+		rrotate(a, n);
+	else if (t->p->d < t->n->d && t->n->d < t->d)
 	{
-		rotate(a);
-		printf("ra\n");
-	}
-	else if ((*a)->data > (*a)->next->data && (*a)->data < (*a)->next->next->data)
-	{
-		swap(a);
-		printf("sa\n");
-	}
-	else if ((*a)->data < (*a)->next->data && (*a)->data > (*a)->next->next->data)
-	{
-		rrotate(a);
-		printf("rra\n");
-	}
-	else if ((*a)->data < (*a)->next->next->data && (*a)->next->next->data < (*a)->next->data)
-	{
-		swap(a);
-		rotate(a);
-		printf("sa\nra\n");
+		swap(a, n);
+		rotate(a, n);
 	}
 }
 
-void	sort_3b(t_list **b)
+void	reverse_sort_3(t_list **a, int n)
 {
-	if ((*b)->data > (*b)->next->data && (*b)->next->data > (*b)->next->next->data)
+	t_list	*t;
+
+	t = (*a)->n;
+	if (t->p->d < t->d && t->d < t->n->d)
 	{
-		swap(b);
-		rrotate(b);
-		printf("sb\nrrb\n");
+		swap(a, n);
+		rrotate(a, n);
 	}
-	else if ((*b)->data > (*b)->next->next->data && (*b)->next->data < (*b)->next->next->data)
+	else if (t->p->d < t->n->d && t->d > t->n->d)
+		rotate(a, n);
+	else if (t->p->d > t->d && t->p->d < t->n->d)
+		rrotate(a, n);
+	else if (t->p->d < t->d && t->p->d > t->n->d)
+		swap(a, n);
+	else if (t->p->d > t->n->d && t->n->d > t->d)
 	{
-		rotate(b);
-		printf("rb\n");
-	}
-	else if ((*b)->data > (*b)->next->data && (*b)->data < (*b)->next->next->data)
-	{
-		swap(b);
-		printf("sb\n");
-	}
-	else if ((*b)->data < (*b)->next->data && (*b)->data > (*b)->next->next->data)
-	{
-		rrotate(b);
-		printf("rrb\n");
-	}
-	else if ((*b)->data < (*b)->next->next->data && (*b)->next->next->data < (*b)->next->data)
-	{
-		swap(b);
-		rotate(b);
-		printf("sb\nrb\n");
+		rrotate(a, n);
+		swap(a, n);
 	}
 }
 
-void	sort_3plus(t_list **a, t_list **b)
+// void	parallel_sort(t_list **a, t_list **b)
+// {
+// 	t_list	*ta;
+// 	t_list	*tb;
+
+// 	ta = (*a)->n;
+// 	tb = (*b)->n;
+// 	if (need_sw(a) && need_sw(b))
+// 	{
+// 		swap(a, 3);
+// 		swap(b, 3);
+// 		write (1, "ss\n", 1);
+// 	}
+// }
+
+void	sort_3intop(t_list **a, int n)
 {
-	push(a, b);
-	push(a, b);
-	push(a, b);
-	//sort_3b(b);
+	t_list	*t;
+
+	t = (*a)->n;
+	if (t->p->d > t->d && t->n->d < t->d)
+	{
+		swap(a, n);
+		rotate(a, n);
+		swap(a, n);
+		rrotate(a, n);
+		swap(a, n);
+	}
+	else if (t->d < t->n->d && t->n->d < t->p->d)
+	{
+		swap(a, n);
+		rotate(a, n);
+		swap(a, n);
+		rrotate(a, n);
+	}
+	else if (t->p->d < t->d && t->p->d > t->n->d)
+	{
+		rotate(a, n);
+		swap(a, n);
+		rrotate(a, n);
+		swap(a, n);
+	}
+	else if (t->p->d > t->d && t->p->d < t->n->d)
+		swap(a, n);
+	else if (t->n->d < t->d && t->n->d > t->p->d)
+	{
+		rotate(a, n);
+		swap(a, n);
+		rrotate(a, n);
+	}
+}
+
+void	quick_sort(t_list **a, t_list **b, int n, int *x)
+{
+	unsigned int	i;
+	int				len;
+	unsigned int	mid;
+	(void) x;
+
+	i = 0;
+	len = n;
+	mid = 0;
+	while (ft_lstsize(a) > 3)
+	{
+		mid = midpoint(n);
+		while (i < mid)
+		{
+			if ((*a)->index < mid)
+			{
+				push(a, b, 2);
+				i++;
+			}
+			rotate(a, 1);
+		}
 }
 
 void	sorting(t_list **a, t_list **b, int n, int *x)
@@ -88,11 +140,11 @@ void	sorting(t_list **a, t_list **b, int n, int *x)
 	(void) b;
 	if (n == 2)
 	{
-		if ((*a)->data > (*a)->next->data)
-			swap(a);
+		if ((*a)->d > (*a)->n->d)
+			swap(a, 1);
 	}
 	else if (n == 3)
-		sort_3a(a);
-	else if (n == 4)
-		sort_3plus(a, b);
+		sort_3(a, 1);
+	else if (n >= 4 && n <= 12)
+		quick_sort(a, b, n, x);
 }

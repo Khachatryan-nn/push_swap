@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/08 23:10:31 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/11 19:25:35 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,37 +30,41 @@
 # include <limits.h>
 
 /*
-*	int				data;
+*	int				d;
 *	unsigned int	index;
-*	struct s_list	*prev;
-*	struct s_list	*next;*/
+*	struct s_list	*p;
+*	struct s_list	*n;*/
 typedef struct s_list
 {
-	int				data;
+	int				d;
 	unsigned int	index;
-	struct s_list	*prev;
-	struct s_list	*next;
+	struct s_list	*p;
+	struct s_list	*n;
 }					t_list;
 
+void	quick_sort(t_list **a, t_list **b, int n, int *x);
 void	sorting(t_list **a, t_list **b, int n, int *x);
 int		free_all(t_list *a, t_list *b, int	*int_arr);
 t_list	*fill_a(int argv, char **argc, int *len);
 int		*fill_int_arr(t_list *start, int len);
 void	sort_array_buttefly(int	*x, int	len);
-void	sort_3plus(t_list **a, t_list **b);
+void	indexing(t_list *a, int *x, int len);
+void	push(t_list **a, t_list **b, int n);
 int		free_stacks(t_list *a, t_list *b);
+void	reverse_sort_3(t_list **a, int n);
 char	**spliter(int argN, char **args);
+void	sort_3intop(t_list **a, int n);
 void	print_int_array(int *x, int n);
-void	push(t_list **a, t_list **b);
+void	rrotate(t_list **nodes, int n);
+void	rotate(t_list **nodes, int n);
+void	sort_int_arr(int *x, int len);
+void	swap(t_list **start, int n);
 void	print_list(t_list *start);
-void	rrotate(t_list **nodes);
-void	rotate(t_list **nodes);
-void	swap(t_list **start);
+void	sort_3(t_list **a, int n);
 char	**free_str(char	*str);
 char	**free_str(char	*str);
-void	sort_3a(t_list **a);
-void	sort_3b(t_list **b);
 int		free_a(t_list *a);
+int		midpoint(int len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
@@ -75,7 +79,7 @@ void	ft_lstdelone(t_list *lst);
 void	ft_lstclear(t_list **lst);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
-t_list	*ft_lstnew(int data);
+t_list	*ft_lstnew(int d);
 char	*get_next_line(int fd);
 int		ft_percentage(char type, va_list arg);
 int		ft_putnbrhex(unsigned int nb, char c);
