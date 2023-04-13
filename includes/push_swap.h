@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/12 20:36:19 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/13 18:29:31 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,16 @@ typedef struct s_list
 void	quick_sort(t_list **a, t_list **b, int n, int *x);
 void	sorting(t_list **a, t_list **b, int n, int *x);
 int		free_all(t_list *a, t_list *b, int	*int_arr);
+int		on_the_right_side(t_list *start, int mid);
 t_list	*fill_a(int argv, char **argc, int *len);
 int		*fill_int_arr(t_list *start, int len);
 void	sort_array_buttefly(int	*x, int	len);
 void	indexing(t_list *a, int *x, int len);
 void	push(t_list **a, t_list **b, int n);
-int		on_the_right_side(t_list *start, int mid);
+void	rotate_both(t_list **a, t_list **b);
 int		free_stacks(t_list *a, t_list *b);
 void	reverse_sort_3(t_list **a, int n);
+void	swap_both(t_list **a, t_list **b);
 char	**spliter(int argN, char **args);
 void	sort_3intop(t_list **a, int n);
 void	print_int_array(int *x, int n);

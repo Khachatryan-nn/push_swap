@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:54 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/11 17:31:50 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/13 18:30:36 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,4 +126,18 @@ void	rrotate(t_list **nodes, int n)
 		write(1, "rra\n", 4);
 	else if (n == 2)
 		write(1, "rrb\n", 4);
+}
+
+void	rotate_both(t_list **a, t_list **b)
+{
+	rotate(a, 3);
+	rotate(b, 3);
+	write (1, "rr\n", 3);
+}
+
+void	swap_both(t_list **a, t_list **b)
+{
+	swap(a, 3);
+	swap(b, 3);
+	write (1, "ss\n", 3);
 }

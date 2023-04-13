@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 10:44:36 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/13 00:14:52 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/13 18:49:40 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,10 @@ void	quick_sort(t_list **a, t_list **b, int n, int *x)
 				push(a, b, 2);
 				if ((*b)->index > mid / 2)
 				{
-					rotate(b, 2);
+					if (on_the_right_side(*a, mid))
+						rotate_both(a, b);
+					else
+						rotate(b, 2);
 					j++;
 				}
 			}
@@ -157,7 +160,7 @@ void	sorting(t_list **a, t_list **b, int n, int *x)
 	}
 	else if (n == 3)
 		sort_3(a, 1);
-	else if (n >= 4 && n <= 5)
+	else if (n >= 4)
 	{
 		quick_sort(a, b, n, x);
 		sort_3(a, 1);
