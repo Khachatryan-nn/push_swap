@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 10:44:36 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/11 19:26:54 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:14:52 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,25 +113,37 @@ void	sort_3intop(t_list **a, int n)
 void	quick_sort(t_list **a, t_list **b, int n, int *x)
 {
 	unsigned int	i;
-	int				len;
+	int				j;
 	unsigned int	mid;
 	(void) x;
 
-	i = 0;
-	len = n;
 	mid = 0;
-	while (ft_lstsize(a) > 3)
+	(void) j;
+	while (ft_lstsize(*a) > 3)
 	{
-		mid = midpoint(n);
-		while (i < mid)
+		mid = midpoint(mid, n);
+		i = 0;
+		j = 0;
+		while (i < mid && ft_lstsize(*a) > 3)
 		{
 			if ((*a)->index < mid)
 			{
 				push(a, b, 2);
-				i++;
+				if ((*b)->index > mid / 2)
+				{
+					rotate(b, 2);
+					j++;
+				}
 			}
-			rotate(a, 1);
+			else if (on_the_right_side(*a, mid))
+				rotate(a, 1);
+			else
+				rrotate(a, 1);
+			i++;
 		}
+		while (j--)
+			rrotate(b, 2);
+	}
 }
 
 void	sorting(t_list **a, t_list **b, int n, int *x)
@@ -145,6 +157,12 @@ void	sorting(t_list **a, t_list **b, int n, int *x)
 	}
 	else if (n == 3)
 		sort_3(a, 1);
-	else if (n >= 4 && n <= 12)
+	else if (n >= 4 && n <= 5)
+	{
 		quick_sort(a, b, n, x);
+		sort_3(a, 1);
+		push(b, a, 1);
+		push(b, a, 1);
+		sort_3intop(a, 1);
+	}
 }

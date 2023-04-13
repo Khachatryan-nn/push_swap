@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/11 19:25:35 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:36:19 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		*fill_int_arr(t_list *start, int len);
 void	sort_array_buttefly(int	*x, int	len);
 void	indexing(t_list *a, int *x, int len);
 void	push(t_list **a, t_list **b, int n);
+int		on_the_right_side(t_list *start, int mid);
 int		free_stacks(t_list *a, t_list *b);
 void	reverse_sort_3(t_list **a, int n);
 char	**spliter(int argN, char **args);
@@ -59,12 +60,12 @@ void	rrotate(t_list **nodes, int n);
 void	rotate(t_list **nodes, int n);
 void	sort_int_arr(int *x, int len);
 void	swap(t_list **start, int n);
+int		midpoint(int mid, int len);
 void	print_list(t_list *start);
 void	sort_3(t_list **a, int n);
 char	**free_str(char	*str);
 char	**free_str(char	*str);
 int		free_a(t_list *a);
-int		midpoint(int len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);

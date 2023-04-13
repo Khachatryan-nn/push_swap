@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/11 19:22:01 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/13 00:15:04 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int	main(int argv, char **argc)
 	int_arr = fill_int_arr(a, len);
 	indexing(a, int_arr, len);
 	sorting(&a, &b, len, int_arr);
-	ft_printf("!!!=== LIST A ===!!!\n");
-	print_list(a);
-	ft_printf("!!!=== LIST B ===!!!\n");
-	print_list(b);
+	//ft_printf("!!!=== LIST A ===!!!\n");
+	//print_list(a);
+	//ft_printf("!!!=== LIST B ===!!!\n");
+	//print_list(b);
 	return(free_all(a, b, int_arr));
 }
