@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:52:02 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/11 18:57:11 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:17:31 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,21 +98,5 @@ void	sort_int_arr(int *x, int len)
 		}
 		swap_ints(&x[i], &x[temp]);
 		i++;
-	}
-}
-
-void	indexing(t_list *a, int *x, int len)
-{
-	int	i;
-	t_list	*ptr;
-
-	ptr = a;
-	while (ptr)
-	{
-		i = 0;
-		while (i < len && ptr->d != x[i])
-			i++;
-		ptr->index = i;
-		ptr = ptr->n;
 	}
 }

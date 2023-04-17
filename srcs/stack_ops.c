@@ -6,34 +6,11 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:54 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/13 18:30:36 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:18:51 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-/*
- * Fills A with string matrix, gived as arg then returns address of first node
- * created by those arguments and lenght of list also*/
-t_list	*fill_a(int argv, char **argc, int *len)
-{
-	t_list	*start;
-	char	**args;
-	int		i;
-
-	i = 0;
-	start = NULL;
-	args = spliter(argv, argc);
-	if (args == NULL)
-		return (start);
-	while (args[i] != NULL)
-	{
-		ft_lstadd_back(&start, ft_lstnew(ft_atoi(args[i])));
-		i++;
-	}
-	*len = i;
-	return (start);
-}
 
 /*
 * Function swaps the d and index of the first two elements
@@ -54,9 +31,9 @@ void	swap(t_list **start, int n)
 		(*start)->n->index = temp_index;
 	}
 	if (n == 1)
-		write(1, "sa\n", 4);
+		write(1, "sa\n", 3);
 	else if (n == 2)
-		write(1, "sb\n", 4);
+		write(1, "sb\n", 3);
 }
 
 /*
@@ -85,9 +62,9 @@ void	push(t_list **a, t_list **b, int n)
 			(*a)->p = NULL;
 	}
 	if (n == 1)
-		write(1, "pa\n", 4);
+		write(1, "pa\n", 3);
 	else
-		write(1, "pb\n", 4);
+		write(1, "pb\n", 3);
 }
 
 void	rotate(t_list **nodes, int n)
@@ -126,13 +103,6 @@ void	rrotate(t_list **nodes, int n)
 		write(1, "rra\n", 4);
 	else if (n == 2)
 		write(1, "rrb\n", 4);
-}
-
-void	rotate_both(t_list **a, t_list **b)
-{
-	rotate(a, 3);
-	rotate(b, 3);
-	write (1, "rr\n", 3);
 }
 
 void	swap_both(t_list **a, t_list **b)

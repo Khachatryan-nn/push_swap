@@ -6,7 +6,13 @@
 		"ft_printf.h": "c",
 		"compare": "cpp",
 		"type_traits": "cpp",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"variant": "c",
+		"chrono": "c",
+		"__mutex_base": "c",
+		"regex": "c",
+		"filesystem": "c",
+		"random": "c"
 	},
 	"makefile.launchConfigurations": [
 		{
@@ -14,5 +20,6 @@
 			"binaryPath": "/Users/tigrankhachatryan/Desktop/all/42/push_swap/push_swap",
 			"binaryArgs": []
 		}
-	]
+	],
+	"C_Cpp.errorSquiggles": "disabled"
 }

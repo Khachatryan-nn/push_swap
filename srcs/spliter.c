@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:47:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/07 11:53:54 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:23:09 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,19 @@ static int	count_len(int rows, char **strs)
 	while (i < rows)
 	{
 		j = 0;
-		while ((strs[i][j] >= '0' && strs[i][j] <= '9') || strs[i][j] == ' ')
+		while (ft_isdigit(strs[i][j]) || strs[i][j] == ' ' || \
+			(strs[i][j] == '-' && ft_isdigit(strs[i][j + 1])))
 		{
 			if (strs[i][j] >= '0' && strs[i][j] <= '9')
 				counter++;
 			j++;
 		}
 		if (strs[i][j] != '\0')
-		{
-			printf ("Error\n");
-			return (0);
-		}
+			return (0 && ft_printf ("Error\n"));
 		i++;
 	}
 	if (counter == 0 && i > 1)
-		printf("Error\n");
+		return (0 && ft_printf("Error\n"));
 	return (counter);
 }
 
@@ -57,7 +55,8 @@ static int	is_there_num(char *str)
 	check = 0;
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if ((str[i] >= '0' && str[i] <= '9') || (str[i] == '-' \
+			&& (str[i + 1] >= '0' && str[i + 1] <= '9')))
 			check = 1;
 		i++;
 	}
