@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 09:55:48 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 16:17:27 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,13 @@ typedef struct s_list
 	struct s_list	*n;
 }					t_list;
 
+void	rev_quick_sort_part_2(t_list **a, t_list **b, int *i, int j);
+void	rev_quick_sort_part_1(t_list **a, t_list **b, int *i, int *j);
+void	rev_quick_sort_part_3(t_list **a, t_list **b, int j, int *c);
 void	quick_sort_part_1(t_list **a, t_list **b, int mid, int *i);
+void	rev_quick_sort_part_4(t_list **a, t_list **b, int j);
 void	push_and_increment(t_list **a, t_list **b, int *i);
+void	push_swap_utils_4(t_list **a, t_list **b, int *n);
 void	quick_sort(t_list **a, t_list **b, int n, int c);
 void	sorting_for_large(t_list **a, t_list **b, int n);
 int		rev_quick_sort(t_list **a, t_list **b, int n);

@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 09:54:22 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 10:18:55 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:45:22 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	sorting_for_large(t_list **a, t_list **b, int n)
 	if (n > 100)
 		quick_sort(a, b, n, 9);
 	else
-		quick_sort(a, b, n, 4);
+		quick_sort(a, b, n, 3);
 	sort_3(a, 1);
 	count = rev_quick_sort(a, b, n);
-	while (count--)
+	while ((*a)->index != 0)
 		rrotate(a, 1);
 	sort_3intop(a, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 10:44:36 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 10:24:25 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 16:17:09 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,12 @@ void	reverse_sort_3(t_list **a, int n)
 	t_list	*t;
 
 	t = (*a)->n;
-	if (t->p->d < t->d && t->d < t->n->d)
+	if (ft_lstsize(*a) == 2)
+	{
+		if (t->p->index < t->index)
+			swap(a, n);
+	}
+	else if (t->p->d < t->d && t->d < t->n->d)
 	{
 		swap(a, n);
 		rrotate(a, n);
@@ -123,9 +128,12 @@ void	sorting(t_list **a, t_list **b, int n)
 	}
 	else if (n == 3)
 		sort_3(a, 1);
-	if (n > 3 && n <= 11)
+	else if (n > 3 && n <= 11)
 	{
-		quick_sort(a, b, n, 2);
+		if (n < 7)
+			push_swap_utils_4(a, b, &n);
+		else
+			quick_sort(a, b, n, 2);
 		sort_3(a, 1);
 		rev_quick_sort(a, b, n);
 		while ((*a)->index != 0)

@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 19:06:14 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 10:25:24 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:01:38 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	otrs(t_list *start, int mid)
 		else
 			start = start->p;
 	}
-	if (i > 0)
+	if (i >= 0)
 		return (0);
 	return (1);
 }
@@ -80,56 +80,16 @@ int	rev_quick_sort(t_list **a, t_list **b, int n)
 	j = n - 1;
 	count = 3;
 	i = 0;
-	while(j - count >= 0)
+	while (j - count >= 0)
 	{
 		if ((*b)->index == j)
-		{
-			push(b, a, 1);
-			j--;
-			if (i > 0)
-			{
-				if ((*a)->index > (*a)->n->index)
-					swap(a, 1);
-				j -= i;
-				while (--i)
-				{
-					if (!mor(*b, j))
-						rrotate_both(a, b);
-					else
-						rrotate(a, 1);
-				}
-				if ((*a)->index > (*a)->n->index)
-					swap(a, 1);
-			}
-		}
+			rev_quick_sort_part_1(a, b, &i, &j);
 		else if ((*b)->index == j - i - 1 && i < 3 && j - count > i)
-		{
-			push(b, a, 1);
-			i++;
-			if (i > 1)
-			{
-				if (mor(*b, j) == 1)
-					rotate_both(a, b);
-				else
-					rotate(a, 1);
-			}
-		}
-		else if ((*b)->index == count && i == 0)
-		{
-			count++;
-			push(b, a, 1);
-			if (mor(*b, j))
-				rotate_both(a, b);
-			else
-				rotate(a, 1);
-		}
-		else if (mor(*b, j) == 1)
-			rotate(b, 2);
-		else if (mor(*b, j) == 0)
-			rrotate(b, 2);
-		if ((*a)->index == (*a)->n->index + 1 && \
-			(*b)->index == (*b)->n->index - 1)
-			swap_both(a, b);
+			rev_quick_sort_part_2(a, b, &i, j);
+		else if ((*b)->index == count && i <= 1)
+			rev_quick_sort_part_3(a, b, j, &count);
+		else
+			rev_quick_sort_part_4(a, b, j);
 	}
 	return (count);
 }
