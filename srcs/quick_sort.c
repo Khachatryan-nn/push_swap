@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 19:06:14 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 14:01:38 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:26:40 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ int	otrs(t_list *start, int mid)
 			break ;
 		else
 			start = start->p;
+		i--;
 	}
-	if (i >= 0)
+	if (i > 0)
 		return (0);
 	return (1);
 }

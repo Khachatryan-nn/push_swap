@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:54 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 10:18:51 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 09:27:06 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	push(t_list **a, t_list **b, int n)
 	}
 	if (n == 1)
 		write(1, "pa\n", 3);
-	else
+	else if (n == 2)
 		write(1, "pb\n", 3);
 }
 
@@ -105,9 +105,10 @@ void	rrotate(t_list **nodes, int n)
 		write(1, "rrb\n", 4);
 }
 
-void	swap_both(t_list **a, t_list **b)
+void	swap_both(t_list **a, t_list **b, int mode)
 {
 	swap(a, 3);
 	swap(b, 3);
-	write (1, "ss\n", 3);
+	if (!mode)
+		write (1, "ss\n", 3);
 }

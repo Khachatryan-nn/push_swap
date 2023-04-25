@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 16:17:27 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 09:06:42 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,19 @@ void	push_and_increment(t_list **a, t_list **b, int *i);
 void	push_swap_utils_4(t_list **a, t_list **b, int *n);
 void	quick_sort(t_list **a, t_list **b, int n, int c);
 void	sorting_for_large(t_list **a, t_list **b, int n);
+void	rrotate_both(t_list **a, t_list **b, int mode);
+void	rotate_both(t_list **a, t_list **b, int mode);
 int		rev_quick_sort(t_list **a, t_list **b, int n);
 int		free_all(t_list *a, t_list *b, int	*int_arr);
+void	swap_both(t_list **a, t_list **b, int mode);
 t_list	*fill_a(int argv, char **argc, int *len);
 void	sorting(t_list **a, t_list **b, int n);
 int		*fill_int_arr(t_list *start, int len);
 void	sort_array_buttefly(int *x, int len);
 void	indexing(t_list *a, int *x, int len);
-void	rrotate_both(t_list **a, t_list **b);
-void	rotate_both(t_list **a, t_list **b);
 void	push(t_list **a, t_list **b, int n);
 int		free_stacks(t_list *a, t_list *b);
 void	reverse_sort_3(t_list **a, int n);
-void	swap_both(t_list **a, t_list **b);
 char	**spliter(int argN, char **args);
 void	sort_3intop(t_list **a, int n);
 void	print_int_array(int *x, int n);
@@ -85,6 +85,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
+int	ft_strcmp(char *s1, char *s2);
 int		ft_strlen(const char *s);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);

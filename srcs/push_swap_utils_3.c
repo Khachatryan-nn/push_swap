@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:16:05 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 16:17:50 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 09:09:00 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	rev_quick_sort_part_1(t_list **a, t_list **b, int *i, int *j)
 		while (--(*i) && (*b) != NULL)
 		{
 			if (!mor(*b, *j))
-				rrotate_both(a, b);
+				rrotate_both(a, b, 0);
 			else
 				rrotate(a, 1);
 		}
@@ -40,7 +40,7 @@ void	rev_quick_sort_part_2(t_list **a, t_list **b, int *i, int j)
 	if (*i > 1)
 	{
 		if (mor(*b, j) == 1)
-			rotate_both(a, b);
+			rotate_both(a, b, 0);
 		else
 			rotate(a, 1);
 	}
@@ -51,7 +51,7 @@ void	rev_quick_sort_part_3(t_list **a, t_list **b, int j, int *c)
 	(*c)++;
 	push(b, a, 1);
 	if (mor(*b, j))
-		rotate_both(a, b);
+		rotate_both(a, b, 0);
 	else
 		rotate(a, 1);
 }
@@ -64,7 +64,7 @@ void	rev_quick_sort_part_4(t_list **a, t_list **b, int j)
 		rrotate(b, 2);
 	if ((*a)->index == (*a)->n->index + 1 && \
 		(*b)->index == (*b)->n->index - 1)
-		swap_both(a, b);
+		swap_both(a, b, 0);
 }
 
 void	push_swap_utils_4(t_list **a, t_list **b, int *n)

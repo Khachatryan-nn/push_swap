@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 19:52:51 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 10:17:57 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 09:09:00 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	quick_sort_part_1(t_list **a, t_list **b, int mid, int *i)
 		{
 			if ((*a)->index == (*a)->n->index + 1 && \
 				(*b)->index + 1 == (*b)->n->index)
-				swap_both(a, b);
+				swap_both(a, b, 0);
 		}
 	}
 }
