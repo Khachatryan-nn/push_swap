@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 09:33:52 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 19:35:59 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,22 @@ int	main(int argv, char **argc)
 	b = NULL;
 	a = fill_a(argv, argc, &len);
 	if (!a)
-		return (free_stacks(a, b));
+		return (free_stacks(&a, &b));
 	int_arr = fill_int_arr(a, len);
+	write (1, "there\n", 6);
 	if (int_arr == NULL)
-		return (free_stacks(a, b));
-	int_arr = fill_int_arr(a, len);
+		return (free_stacks(&a, &b));
+	if (*int_arr == 2)
+		exit(free_all(&a, &b, int_arr));
 	indexing(a, int_arr, len);
 	sorting(&a, &b, len);
-	exit(free_all(a, b, int_arr));
+	t_list *c;
+	c = a;
+	while (c)
+	{
+		printf("%d ",c->d);
+		c = c->n;
+	}
+	
+	exit(free_all(&a, &b, int_arr));
 }

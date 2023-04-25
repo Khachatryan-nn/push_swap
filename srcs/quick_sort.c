@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 19:06:14 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 23:26:40 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 17:10:04 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int	otrs(t_list *start, int mid)
 	{
 		if (start->index < mid && start->index > 2)
 			break ;
-		else
-			start = start->n;
+		start = start->n;
 		i++;
 	}
 	while (start->n)
@@ -40,8 +39,7 @@ int	otrs(t_list *start, int mid)
 	{
 		if (start->index < mid && start->index > 2)
 			break ;
-		else
-			start = start->p;
+		start = start->p;
 		i--;
 	}
 	if (i > 0)

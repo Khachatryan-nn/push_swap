@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:16:15 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/06 16:58:56 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 17:37:19 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
+	if(!s)
+		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);

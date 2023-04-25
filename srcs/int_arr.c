@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:52:02 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 10:17:31 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:49:12 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	check_for_reccurence_and_being_sorted(int *x, int n)
 			check = 1;
 	}
 	if (check == 0)
-		return (0);
+		return (2);
 	return (1);
 }
 
@@ -56,7 +56,10 @@ int	*fill_int_arr(t_list *a, int len)
 		a = a->n;
 	}
 	if (!check_for_reccurence_and_being_sorted(x, len))
+	{
+		free(x);
 		return (NULL);
+	}
 	sort_int_arr(x, len);
 	return (x);
 }

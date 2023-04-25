@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 19:52:51 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 09:09:00 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:35:21 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_isdigit(char c)
 }
 
 /*
-*There are no int like that*/
+*There are no int like that in indexs*/
 int	tnilt(t_list *a, int k)
 {
 	while (a)

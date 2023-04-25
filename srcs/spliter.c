@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:47:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/17 10:23:09 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:17:39 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ char	**spliter(int argv, char **argc)
 			return (free_str(all_there));
 		temp = ft_strjoin(all_there, argc[i]);
 		free(all_there);
+		all_there = NULL;
 		all_there = ft_strjoin(temp, " ");
 		free(temp);
 		i++;
@@ -100,5 +101,6 @@ char	**spliter(int argv, char **argc)
 	arr = ft_split(all_there, ' ');
 	if (arr == NULL)
 		ft_printf("Error\n");
+	free_str(all_there);
 	return (arr);
 }
