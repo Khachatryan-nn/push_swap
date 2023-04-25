@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:22:21 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 19:20:28 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 20:06:26 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	free_a(t_list *a)
 *Frees 2 lists and integer array, given as arguments,
 *then equalizing them to 0 and fter all, returning 0.
 */
-int	free_all(t_list **a, t_list **b, int	*int_arr)
+int	free_all(t_list **a, t_list **b, int *int_arr)
 {
 	if (*a)
 	{

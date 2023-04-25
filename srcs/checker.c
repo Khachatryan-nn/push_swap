@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 20:11:57 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 19:20:16 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 19:55:53 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,7 @@ int	main(int argv, char **argc)
 		return (free_stacks(&a, &b));
 	int_arr = fill_int_arr(a, len);
 	if (int_arr == NULL)
-		return (free_stacks(&a, &b));
-	if (*int_arr == 2)
-		exit(free_all(&a, &b, int_arr));
+		return (free_all(&a, &b, int_arr));
 	indexing(a, int_arr, len);
 	read_from_out(&a, &b);
 	check(a);

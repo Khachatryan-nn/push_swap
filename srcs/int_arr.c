@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:52:02 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 18:49:12 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/25 20:07:40 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static int	check_for_reccurence_and_being_sorted(int *x, int n)
 				return (0);
 			j++;
 		}
-		i++;
-		if (i < n && x[i - 1] > x[i])
+		if (i < n && x[i - 1] > x[i] && i > 0)
 			check = 1;
+		i++;
 	}
 	if (check == 0)
 		return (2);
@@ -48,6 +48,8 @@ int	*fill_int_arr(t_list *a, int len)
 	int	i;
 
 	x = (int *)malloc(sizeof(int) * len);
+	if (!x)
+		return (NULL);
 	i = 0;
 	while (i < len && a != NULL)
 	{
