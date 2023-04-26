@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:47:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 18:17:39 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:49:49 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int	is_there_num(char *str)
 	}
 	if (check == 0)
 	{
-		ft_printf("Error\n");
+		write(1, "Error\n", 6);
 		return (0);
 	}
 	return (1);

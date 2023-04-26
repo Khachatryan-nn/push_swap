@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:51:39 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 20:09:01 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:22:15 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,11 @@ int	main(int argv, char **argc)
 	if (!a)
 		return (free_stacks(&a, &b));
 	int_arr = fill_int_arr(a, len);
-	if (int_arr == NULL && check_for_reccurence_and_being_sorted())
+	if (int_arr == NULL)
 		exit (free_all(&a, &b, int_arr));
+	if (sorted(int_arr, len))
+		exit(free_all(&a, &b, int_arr));
+	sort_int_arr(int_arr, len);
 	indexing(a, int_arr, len);
 	sorting(&a, &b, len);
 	exit(free_all(&a, &b, int_arr));

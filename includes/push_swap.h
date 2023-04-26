@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:50:23 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 18:47:12 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:13:41 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,16 @@ void	sort_3(t_list **a, int n);
 int		tnilt(t_list *a, int k);
 void	rsrr(t_list **a, int n);
 char	**free_str(char	*str);
-char	**free_str(char	*str);
-int		free_a(t_list *a);
+int		sorted(int *x, int n);
+int		free_a(t_list **a);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_atoi(const char *str, t_list **a);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(char *s1, char *s2);
 char	*ft_strdup(const char *s1);
 int		ft_strlen(const char *s);
-int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 int		ft_isdigit(char c);
 void	ft_lstadd_front(t_list **lst, t_list *new);

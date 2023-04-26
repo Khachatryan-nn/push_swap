@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 18:22:21 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 20:06:26 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:40:29 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 /*
 *Does free for a stack only, but in first uses lstclear
 *Then does free, and after all, makes a = 0*/
-int	free_a(t_list *a)
+int	free_a(t_list **a)
 {
-	if (a)
+	if (*a)
 	{
-		ft_lstclear(&a);
-		free(a);
+		ft_lstclear(a);
+		free(*a);
 		a = 0;
 	}
+	write(1, "Error\n", 6);
 	return (0);
 }
 
@@ -70,9 +71,7 @@ int	free_stacks(t_list **a, t_list **b)
 		free (*b);
 		b = 0;
 	}
-	//system("leaks push_swap");
-	system("leaks checker");
-	ft_printf("Error\n");
+	write(1, "Error\n", 6);
 	return (0);
 }
 

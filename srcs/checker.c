@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 20:11:57 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 19:55:53 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:39:19 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	read_from_out(t_list **a, t_list **b)
 	}
 }
 
-static void	check(t_list *a)
+static void	check(t_list *a, t_list *b)
 {
 	int	i;
 
@@ -65,6 +65,11 @@ static void	check(t_list *a)
 		}
 		i++;
 		a = a->n;
+	}
+	if (ft_lstsize(b) > 0)
+	{
+		write(1, "KO\n", 3);
+		return ;
 	}
 	write (1, "OK\n", 3);
 }
@@ -84,9 +89,10 @@ int	main(int argv, char **argc)
 		return (free_stacks(&a, &b));
 	int_arr = fill_int_arr(a, len);
 	if (int_arr == NULL)
-		return (free_all(&a, &b, int_arr));
+		exit (free_all(&a, &b, int_arr));
+	sort_int_arr(int_arr, len);
 	indexing(a, int_arr, len);
 	read_from_out(&a, &b);
-	check(a);
+	check(a, b);
 	exit(free_all(&a, &b, int_arr));
 }

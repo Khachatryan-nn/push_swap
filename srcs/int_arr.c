@@ -6,13 +6,13 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:52:02 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 20:07:40 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:22:06 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	check_for_reccurence_and_being_sorted(int *x, int n)
+static int	unique(int *x, int n)
 {
 	int	i;
 	int	j;
@@ -26,16 +26,34 @@ static int	check_for_reccurence_and_being_sorted(int *x, int n)
 		while (j < n)
 		{
 			if (i != j && x[i] == x[j])
+			{
+				write(1, "Error\n", 6);
 				return (0);
+			}
 			j++;
 		}
+		i++;
+	}
+	return (1);
+}
+
+int	sorted(int *x, int n)
+{
+	int	i;
+	int	check;
+
+	i = 0;
+	check = 0;
+	while (i < n)
+	{
 		if (i < n && x[i - 1] > x[i] && i > 0)
 			check = 1;
 		i++;
 	}
 	if (check == 0)
-		return (2);
-	return (1);
+		return (1);
+	else
+		return (0);
 }
 
 /*
@@ -57,22 +75,12 @@ int	*fill_int_arr(t_list *a, int len)
 		i++;
 		a = a->n;
 	}
-	if (!check_for_reccurence_and_being_sorted(x, len))
+	if (!unique(x, len))
 	{
 		free(x);
 		return (NULL);
 	}
-	sort_int_arr(x, len);
 	return (x);
-}
-
-void	print_int_array(int *x, int n)
-{
-	int	i;
-
-	i = 0;
-	while (i < n)
-		ft_printf("%d\n", x[i++]);
 }
 
 static void	swap_ints(int *sw1, int *sw2)

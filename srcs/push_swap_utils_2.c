@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 09:54:22 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 18:18:19 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:48:16 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,12 @@ t_list	*fill_a(int argv, char **argc, int *len)
 
 	i = 0;
 	start = NULL;
-
 	args = spliter(argv, argc);
 	if (args == NULL)
 		return (start);
 	while (args[i] != NULL)
 	{
-		ft_lstadd_back(&start, ft_lstnew(ft_atoi(args[i])));
+		ft_lstadd_back(&start, ft_lstnew(ft_atoi(args[i], &start)));
 		free(args[i]);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:16:05 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/04/25 16:56:54 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:46:54 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void	push_swap_utils_4(t_list **a, t_list **b, int *n)
 			push(a, b, 2);
 			(*n)--;
 		}
-		else if (otrs(*a, *n) == 0)
+		else if (otrs(*a, *n + 1) == 0)
 			rrotate(a, 1);
-		else if (otrs(*a, *n) == 1)
+		else if (otrs(*a, *n + 1) == 1)
 			rotate(a, 1);
 	}
 	if (ft_lstsize(*b) > 1)
